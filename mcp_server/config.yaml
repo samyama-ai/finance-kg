@@ -1,7 +1,11 @@
 server:
-  name: {{KG_SLUG}}-kg
-  description: Query the {{KG_NAME}} knowledge graph
+  name: finance-kg
+  description: Query the finance knowledge graph
+
 graph:
+  # Used when FINANCE_KG_URL is set or --url is given. With neither, the
+  # server loads the graph into an embedded engine at start-up.
   host: 127.0.0.1
   port: 8080
-  tenant: {{KG_SLUG}}
+  # Set FINANCE_KG_GRAPH or pass --graph to query a named tenant.
+  tenant: finance
