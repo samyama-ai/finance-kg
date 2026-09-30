@@ -1,8 +1,17 @@
 .venv/
 __pycache__/
 *.pyc
-data/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+# Stray asciinema recordings stay out, but demo/*.cast is a deliverable.
 *.cast
+!demo/*.cast
 site/
 .DS_Store
 .env
+
+# data/ is never committed. data/raw/ is downloaded by `python -m
+# etl.download_data` and is covered by its publishers' terms, not this repo's
+# licence -- see docs/data-provenance.md. data/generated/ is rebuilt from a seed.
+/data/
